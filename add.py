@@ -40,5 +40,5 @@ bot = telebot.TeleBot(TOKEN)
 
             total_base = СurrencyConverter.convert(quote, base, amount)
 
-
+            
 bot.polling()
