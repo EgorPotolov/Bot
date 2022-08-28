@@ -1,17 +1,7 @@
 import json
-import requests
-import telebot
-
-TOKEN = '5730166317:AAErPcWQkr4hph9D6aZLUSnXHBSoCrweKz0'
+import 
 
 bot = telebot.TeleBot(TOKEN)
-
-keys = {
-    'рубль': 'RUB',
-    'евро': 'EUR',
-    'доллар': 'USD',
-}
-
 
 class ConvertionException(Exception):
     pass
