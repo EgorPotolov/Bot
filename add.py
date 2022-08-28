@@ -1,6 +1,6 @@
 import telebot
 from config import keys, TOKEN
-from extensions import ConvertionException, СurrencyConverter
+from extensions import ConvertionException, CurrencyConverter
 
 
 bot = telebot.TeleBot(TOKEN)
@@ -28,7 +28,7 @@ bot = telebot.TeleBot(TOKEN)
                 raise ConvertionException('Слишком много парааметров.')
 
             quote, base, amount = values
-            total_base = СurrencyConverter.convert(quote, base, amount)
+            total_base = CurrencyConverter.convert(quote, base, amount)
         except ConvertionException as e:
             bot.reply_to(message, f'Ошибка пользователя. \n{e}')
         except Exception as e:
@@ -38,7 +38,7 @@ bot = telebot.TeleBot(TOKEN)
             text = f'Цена {amount} {quote} в {base} - {total_base}'
             bot.send_message(message.chat.id, text)
 
-            total_base = СurrencyConverter.convert(quote, base, amount)
+            total_base = CurrencyConverter.convert(quote, base, amount)
 
             
 bot.polling()
